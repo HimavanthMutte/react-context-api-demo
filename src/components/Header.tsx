@@ -1,3 +1,19 @@
+import { useContext } from "react";
+import { themeContext } from "../contexts/themeContext";
+
 export default function Header() {
-  return <div>Header Component</div>;
+  const { theme, setTheme } = useContext(themeContext) as {
+    theme: string;
+    setTheme: (theme: string) => void;
+  };
+
+  return (
+    <div>
+      Header Component -{theme}
+      <br />
+      <button onClick={() => setTheme(theme === "Light" ? "Dark" : "Light")}>
+        Toggle theme
+      </button>
+    </div>
+  );
 }
