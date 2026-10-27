@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { useState } from "react";
 import type { ReactNode } from "react";
 
-const themeContext = createContext({});
+export const themeContext = createContext({});
 
 type ThemeContextProviderProps = {
   children: ReactNode;
