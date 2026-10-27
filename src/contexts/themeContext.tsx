@@ -1,6 +1,7 @@
 import { createContext } from "react";
-import { useState } from "react";
 import type { ReactNode } from "react";
+
+import useTheme from "../hooks/useTheme";
 
 type ThemeContextType = {
   theme: string;
@@ -17,7 +18,7 @@ type ThemeContextProviderProps = {
 };
 
 const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
-  const [theme, setTheme] = useState("Light");
+  const { theme, setTheme } = useTheme();
   return (
     <themeContext.Provider value={{ theme, setTheme }}>
       {children}
