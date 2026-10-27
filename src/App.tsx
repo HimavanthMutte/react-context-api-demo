@@ -10,11 +10,11 @@ import "./App.css";
 export default function App() {
   const { theme } = useContext(themeContext);
   return (
-    <div className={`${theme}`}>
+    <div className={`app-shell ${theme}`}>
       <Header />
-      <hr />
+      <hr className="section-divider" />
       <Main />
-      <hr />
+      <hr className="section-divider" />
       <Footer />
     </div>
   );
