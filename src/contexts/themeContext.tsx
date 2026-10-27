@@ -8,7 +8,7 @@ type ThemeContextProviderProps = {
   children: ReactNode;
 };
 
-const themeContextProvider = ({ children }: ThemeContextProviderProps) => {
+const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
   const [theme, setTheme] = useState("Light");
   return (
     <themeContext.Provider value={{ theme, setTheme }}>
@@ -17,4 +17,4 @@ const themeContextProvider = ({ children }: ThemeContextProviderProps) => {
   );
 };
 
-export default themeContextProvider;
+export default ThemeContextProvider;
