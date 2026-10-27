@@ -9,7 +9,9 @@ export default function App() {
     <ThemeContextProvider>
       <div>
         <Header />
+        <hr />
         <Main />
+        <hr />
         <Footer />
       </div>
     </ThemeContextProvider>
