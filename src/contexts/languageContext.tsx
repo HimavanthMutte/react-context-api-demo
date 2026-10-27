@@ -1,6 +1,7 @@
 import { createContext } from "react";
-import { useState } from "react";
+
 import type { ReactNode } from "react";
+import useLanguage from "../hooks/useLanguage";
 
 type LanguageContextType = {
   language: string;
@@ -17,11 +18,8 @@ type LanguageContextProviderType = {
 };
 
 const LanguageContextProvider = ({ children }: LanguageContextProviderType) => {
-  const [language, setLanguage] = useState("English");
+  const { language, changeLanguage } = useLanguage();
 
-  const changeLanguage = () => {
-    setLanguage((state) => (state === "English" ? "Hindi" : "English"));
-  };
   return (
     <languageContext.Provider value={{ language, changeLanguage }}>
       {children}
