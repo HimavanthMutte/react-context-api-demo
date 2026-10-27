@@ -2,7 +2,15 @@ import { createContext } from "react";
 import { useState } from "react";
 import type { ReactNode } from "react";
 
-export const themeContext = createContext({});
+type ThemeContextType = {
+  theme: string;
+  setTheme: (theme: string) => void;
+};
+
+export const themeContext = createContext<ThemeContextType>({
+  theme: "",
+  setTheme: () => {},
+});
 
 type ThemeContextProviderProps = {
   children: ReactNode;
