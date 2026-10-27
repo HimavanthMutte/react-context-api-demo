@@ -2,10 +2,7 @@ import { useContext } from "react";
 import { themeContext } from "../contexts/themeContext";
 
 export default function Footer() {
-  const { theme, setTheme } = useContext(themeContext) as {
-    theme: string;
-    setTheme: (theme: string) => void;
-  };
+  const { theme, setTheme } = useContext(themeContext);
 
   return (
     <div>
