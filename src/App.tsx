@@ -2,21 +2,20 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
-import ThemeContextProvider from "./contexts/themeContext";
-import LanguageContextProvider from "./contexts/languageContext";
+import { useContext } from "react";
+import { themeContext } from "./contexts/themeContext";
+
+import "./App.css";
 
 export default function App() {
+  const { theme } = useContext(themeContext);
   return (
-    <LanguageContextProvider>
-      <ThemeContextProvider>
-        <div>
-          <Header />
-          <hr />
-          <Main />
-          <hr />
-          <Footer />
-        </div>
-      </ThemeContextProvider>
-    </LanguageContextProvider>
+    <div className={`${theme}`}>
+      <Header />
+      <hr />
+      <Main />
+      <hr />
+      <Footer />
+    </div>
   );
 }
